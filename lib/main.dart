@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:formulaire_flutter/Connecter/connect.dart';
+import 'package:formulaire_flutter/pages/connexion.dart';
+import 'package:formulaire_flutter/pages/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const Connect(),
+      home: Connexion(),
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
