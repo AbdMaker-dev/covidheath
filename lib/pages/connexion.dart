@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:formulaire_flutter/common/customfield.dart';
+import 'package:formulaire_flutter/pages/home.dart';
 import 'package:formulaire_flutter/wigets/input_text.dart';
 import 'package:formulaire_flutter/wigets/my_button.dart';
 
 class Connexion extends StatefulWidget {
-  Connexion({Key? key}) : super(key: key);
+  const Connexion({Key? key}) : super(key: key);
 
   @override
   State<Connexion> createState() => _ConnexionState();
@@ -33,7 +33,18 @@ class _ConnexionState extends State<Connexion> {
               const SizedBox(
                 height: 30,
               ),
-              MyButton(text: "Connecter", onPressed: () {})
+              MyButton(
+                  text: "Connecter",
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => Home(
+                                nom: "Diop",
+                                prenom: "Ibou",
+                              )),
+                    );
+                  })
             ],
           ),
         ),
