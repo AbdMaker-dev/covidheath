@@ -1,21 +1,21 @@
+
 import 'package:flutter/material.dart';
 import 'package:formulaire_flutter/common/customfield.dart';
 
 class InputText extends StatelessWidget {
   String text;
+  dynamic validation;
+  Function(String)? onChanged;
 
-  InputText({Key? key, required this.text}) : super(key: key);
+  InputText({Key? key, required this.text, this.validation, this.onChanged})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
         //controller: numberController,
-        decoration:
-            textInputDecoration.copyWith(hintText: text),
-        validator: (String? value) {
-          return (value != null && value.length > 4)
-              ? "Entrez votre mot de  passe"
-              : null;
-        });
+        onChanged: onChanged,
+        decoration: textInputDecoration.copyWith(hintText: text),
+        validator: validation);
   }
 }
